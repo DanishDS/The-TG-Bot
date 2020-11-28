@@ -20,7 +20,7 @@ async def clone(event):
         if not client.storage.userObj:
             return await event.edit("`You need to clone a profile before reverting!`")
         await updateProfile(client.storage.userObj, reset=True)
-        await event.edit("`Feels good to be back.`")
+        await event.edit("`Feels good to be a robot again.`")
         return
     elif "-d" in inputArgs:
         client.storage.userObj = False
@@ -30,9 +30,9 @@ async def clone(event):
         client.storage.userObj = await event.client(GetFullUserRequest(event.from_id))
     logger.info(client.storage.userObj)
     userObj = await getUserObj(event)
-    await event.edit("`Stealing this random person's identity..`")
+    await event.edit("`Stealing this stupid human's identity..`")
     await updateProfile(userObj)
-    await event.edit("`I am you and you are me.`")
+    await event.edit("`Detroit: Become Human 🤖 .`")
 
 
 async def updateProfile(userObj, reset=False):
